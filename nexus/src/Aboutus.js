@@ -23,10 +23,12 @@ function Aboutus() {
     const handleAnimation = async () => {
       await svgControls.start({
         opacity: scrollY > 50 ? 0 : 1,
+        transition: { duration: 0 }, // Instant transition (opacity change without fading)
       });
 
       await amberControls.start({
         opacity: scrollY > 50 ? 1 : 0,
+        transition: { duration: 0.1 }, // Adjust the duration as needed
       });
     };
 
@@ -44,9 +46,9 @@ function Aboutus() {
         {/* Content */}
         hola amigos
         <motion.div
-          className='w-full h-16 absolute bottom-0 bg-amber-400'
+          className='w-full h-16 absolute bottom-0 black-section'
           animate={amberControls}
-          style={{ transition: 'opacity 0.5s ease' }} // Adjust the duration as needed
+          style={{ transition: 'opacity 0.1s ease' }} // Adjust the duration as needed
         ></motion.div>
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,12 +56,10 @@ function Aboutus() {
           viewBox="-13 -8 25 8"
           preserveAspectRatio='none'
           animate={svgControls}
-          style={{ transition: 'opacity 0.5s ease' }} // Adjust the duration as needed
+          style={{ transition: 'opacity 0s ease' }} // Instant transition for the SVG
         >
           <path d="M 0 0 L -13 -8 L -13 0 Z L 12 -8 L 12 0" fill="#161617" />
         </motion.svg>
-        
-
       </section>
       <section className="bg-black black-section flex flex-col items-center justify-center text-white h-96">
         {/* Content */}
