@@ -1,3 +1,15 @@
 .black-section{
   background-color: #161617;
 }
+
+.white-section{
+  position: relative;
+}
+
+.danimation{
+  transform: rotate(.5turn);
+ } 
+
+
+
+
