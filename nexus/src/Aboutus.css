@@ -10,7 +10,12 @@
 .black-section {
   background-color: #161617;
   height: 550px;
-  border-left: 12px solid #3f3f41;
+  /* border-left: 12px solid #3f3f41;
+  border-right: 12px solid #3f3f41; */
+}
+
+.border1{
+    border-left: 12px solid #3f3f41;
   border-right: 12px solid #3f3f41;
 }
 

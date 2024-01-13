@@ -87,18 +87,18 @@ function Aboutus() {
   }, [scrollY, svgControls, amberControls, redSvgControls]);
 
   return (
-    <div className="relative font">
+    <div className="relative font ">
       <section className="bg-white flex flex-col items-center justify-center h-80 relative ">
         {/* Content */}
         <h1 className='large-font'>A b o u t  u s</h1>
         
         <motion.div
-          className='w-full h-20 absolute bottom-0 black-section'
-          animate={amberControls}
+          className='w-full h-12 absolute bottom-0 black-section '
+          animate={amberControls} 
         ></motion.div>
         <motion.svg
-          xmlns="http://www.w3.org/2000/svg"
-          className='w-full h-28 absolute bottom-0'
+          xmlns="http://www.w3.org/2000/svg" 
+          className='w-full h-28 absolute bottom-0 '
           viewBox="-13 -8 25 8"
           preserveAspectRatio='none'
           animate={svgControls}
@@ -108,7 +108,7 @@ function Aboutus() {
 
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 14 4"
+          viewBox="0 0 14 4" 
           preserveAspectRatio='none'
           className='w-full h-28 absolute bottom-0 danimation'
           animate={redSvgControls}
@@ -116,6 +116,7 @@ function Aboutus() {
           <path d="M 0 0 L 7 4 L 14 0 L 0 0" fill="#161617" />
         </motion.svg>
       </section>
+      <div className='border1'>
       <section className="black-section flex flex-col text-white">
         <p className='p-10'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
         <p className='p-10'>Too know more about the three clubs click on the cards below</p>
@@ -132,6 +133,7 @@ function Aboutus() {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 }
