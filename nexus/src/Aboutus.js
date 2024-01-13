@@ -22,54 +22,57 @@ function Aboutus() {
     };
 
     const handleAnimation = async () => {
+      const duration = 0;
+      const easing = 'easeInOut';
+
       if (scrollY <= 50) {
         // Step 1: Initial state
-        await svgControls.start({
-          opacity: 1,
-          transition: { duration: 0 }, // Fade in initially
-        });
-
-        await amberControls.start({
-          opacity: 0,
-          transition: { duration: 0 }, // Fade out initially
-        });
-
-        await redSvgControls.start({
-          opacity: 0,
-          transition: { duration: 0 }, // Hide red SVG initially
-        });
-      } else if (scrollY <= 100) {
+        await Promise.all([
+          svgControls.start({
+            opacity: 1,
+            transition: { duration, ease: easing },
+          }),
+          amberControls.start({
+            opacity: 0,
+            transition: { duration, ease: easing },
+          }),
+          redSvgControls.start({
+            opacity: 0,
+            transition: { duration, ease: easing },
+          }),
+        ]);
+      } else if (scrollY <= 150) {
         // Step 2: Amber visible, SVG hidden
-        await svgControls.start({
-          opacity: 0,
-          transition: { duration: 0 }, // Fade out SVG when scrolling down
-        });
-
-        await amberControls.start({
-          opacity: 1,
-          transition: { duration: 0 }, // Fade in amber when scrolling down
-        });
-
-        await redSvgControls.start({
-          opacity: 0,
-          transition: { duration: 0 }, // Hide red SVG
-        });
+        await Promise.all([
+          svgControls.start({
+            opacity: 0,
+            transition: { duration, ease: easing },
+          }),
+          amberControls.start({
+            opacity: 1,
+            transition: { duration, ease: easing },
+          }),
+          redSvgControls.start({
+            opacity: 0,
+            transition: { duration, ease: easing },
+          }),
+        ]);
       } else {
         // Step 3: Both SVG and Amber hidden, show red SVG
-        await svgControls.start({
-          opacity: 0,
-          transition: { duration: 0 }, // Fade out SVG when scrolling further down
-        });
-
-        await amberControls.start({
-          opacity: 0,
-          transition: { duration: 0 }, // Fade out amber when scrolling further down
-        });
-
-        await redSvgControls.start({
-          opacity: 1,
-          transition: { duration: 0 }, // Fade in red SVG
-        });
+        await Promise.all([
+          svgControls.start({
+            opacity: 0,
+            transition: { duration, ease: easing },
+          }),
+          amberControls.start({
+            opacity: 0,
+            transition: { duration, ease: easing },
+          }),
+          redSvgControls.start({
+            opacity: 1,
+            transition: { duration, ease: easing },
+          }),
+        ]);
       }
     };
 
@@ -82,14 +85,13 @@ function Aboutus() {
   }, [scrollY, svgControls, amberControls, redSvgControls]);
 
   return (
-    <div className="grid grid-rows-3 gap-0 relative">
+    <div className="grid grid-rows-3 gap-0 relative font">
       <section className="bg-white flex flex-col items-center justify-center h-96 relative">
         {/* Content */}
-        hola amigos
+        <h1>NEXUS</h1>
         <motion.div
           className='w-full h-20 absolute bottom-0 black-section'
           animate={amberControls}
-          style={{ transition: 'opacity 0s ease' }}
         ></motion.div>
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +99,6 @@ function Aboutus() {
           viewBox="-13 -8 25 8"
           preserveAspectRatio='none'
           animate={svgControls}
-          style={{ transition: 'opacity 0s ease' }}
         >
           <path d="M 0 0 L -13 -8 L -13 0 Z L 12 -8 L 12 0" fill="#161617" />
         </motion.svg>
@@ -108,7 +109,6 @@ function Aboutus() {
           preserveAspectRatio='none'
           className='w-full h-28 absolute bottom-0 danimation'
           animate={redSvgControls}
-          style={{ transition: 'opacity 0s ease' }}
         >
           <path d="M 0 0 L 7 4 L 14 0 L 0 0" fill="#161617" />
         </motion.svg>
