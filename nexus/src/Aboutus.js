@@ -87,18 +87,23 @@ function Aboutus() {
   }, [scrollY, svgControls, amberControls, redSvgControls]);
 
   return (
-    <div className="relative font ">
-      <section className="bg-white flex flex-col items-center justify-center h-80 relative ">
+    <div className="relative font">
+      <section className="whitey flex flex-col items-center justify-center h-80 relative">
         {/* Content */}
-        <h1 className='large-font'>A b o u t  u s</h1>
+        <h1 className='large-font align-left'>
+  {'A b o u t'.split('').map((char, index) => 
+    <span key={index} style={{ position: 'relative' }}>{char}</span>
+  )}
+</h1>
+<h1 className='large-font move-up'>N E X U S</h1>
         
         <motion.div
-          className='w-full h-12 absolute bottom-0 black-section '
+          className='w-full h-12 absolute bottom-0 black-section border1'
           animate={amberControls} 
         ></motion.div>
         <motion.svg
           xmlns="http://www.w3.org/2000/svg" 
-          className='w-full h-28 absolute bottom-0 '
+          className='w-full h-28 absolute bottom-0 border1 '
           viewBox="-13 -8 25 8"
           preserveAspectRatio='none'
           animate={svgControls}
@@ -110,7 +115,7 @@ function Aboutus() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 14 4" 
           preserveAspectRatio='none'
-          className='w-full h-28 absolute bottom-0 danimation'
+          className='w-full h-28 absolute bottom-0 danimation '
           animate={redSvgControls}
         >
           <path d="M 0 0 L 7 4 L 14 0 L 0 0" fill="#161617" />

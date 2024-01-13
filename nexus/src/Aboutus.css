@@ -15,14 +15,25 @@
 }
 
 .border1{
-    border-left: 12px solid #3f3f41;
-  border-right: 12px solid #3f3f41;
+    border-left: 16px solid #3f3f41;
+  border-right: 16px solid #3f3f41;
 }
 
 .large-font{
-  font-size: 50px;
+  font-size: 100px;
 }
 
+.align-left {
+  margin-left: 100px;
+  text-align: left;
+  width: 100%;
+}
+
+.whitey{
+ background-color: rgb(233, 233, 233); 
+ /* border-left: 16px solid #ffffff;
+  border-right: 16px solid #ffffff ; */
+}
 .white-section{
   position: relative;
 }
@@ -30,6 +41,11 @@
 .danimation{
   transform: rotate(.5turn);
  } 
+
+ .move-up {
+  position: relative;
+  top: -30px; /* Adjust as needed */
+}
 
 
 
