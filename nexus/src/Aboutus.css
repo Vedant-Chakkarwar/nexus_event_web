@@ -7,8 +7,15 @@
   font-family: Hacked,fallback,sans-serif;
 }
 
-.black-section{
+.black-section {
   background-color: #161617;
+  height: 550px;
+  border-left: 12px solid #3f3f41;
+  border-right: 12px solid #3f3f41;
+}
+
+.large-font{
+  font-size: 50px;
 }
 
 .white-section{

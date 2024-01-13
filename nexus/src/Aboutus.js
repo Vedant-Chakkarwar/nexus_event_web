@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import './Aboutus.css'; // Import your CSS file
 import borderImage from './border.png'; // Import the border image
+import Card from './Card';
+import Contact from './Contact';
 
 function Aboutus() {
   const blueSectionStyle = {
@@ -85,10 +87,11 @@ function Aboutus() {
   }, [scrollY, svgControls, amberControls, redSvgControls]);
 
   return (
-    <div className="grid grid-rows-3 gap-0 relative font">
-      <section className="bg-white flex flex-col items-center justify-center h-96 relative">
+    <div className="relative font">
+      <section className="bg-white flex flex-col items-center justify-center h-80 relative ">
         {/* Content */}
-        <h1>NEXUS</h1>
+        <h1 className='large-font'>A b o u t  u s</h1>
+        
         <motion.div
           className='w-full h-20 absolute bottom-0 black-section'
           animate={amberControls}
@@ -113,12 +116,20 @@ function Aboutus() {
           <path d="M 0 0 L 7 4 L 14 0 L 0 0" fill="#161617" />
         </motion.svg>
       </section>
-      <section className="black-section flex flex-col items-center justify-center text-white h-96">
-        {/* Content */}
+      <section className="black-section flex flex-col text-white">
+        <p className='p-10'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+        <p className='p-10'>Too know more about the three clubs click on the cards below</p>
+        <div className="flex flex-row justify-center">
+          <Card />
+          <Card />
+          <Card />
+          </div>
       </section>
       <section className="bg-blue-800 flex flex-col items-center text-white h-96 relative" style={blueSectionStyle}>
-        <div className="content-container flex flex-col items-center justify-center h-full">
-          {/* Content */}
+        <div className="content-container   h-full">
+          <div className='pt-24'>
+          <Contact />
+          </div>
         </div>
       </section>
     </div>
