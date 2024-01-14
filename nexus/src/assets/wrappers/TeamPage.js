@@ -4,16 +4,12 @@ export const Wrapper = styled.section`
 *{
     margin:0;
     padding: 0;
-    background-color: black;
 }
 body{
     height: 100vh;
-    background-color:black;
 }
 .main{
-    display: flex;
-    flex-direction:row;
-    flex-wrap:wrap;
+    background-color:black;
 }
 .head1{
     height:30%;
@@ -32,12 +28,9 @@ body{
     align-items: margin-top;
     justify-content: space-around;
 }
-/* .container{
-   position: relative;
-   
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-} */
+.container{
+    margin:0 auto;
+}
 .card{
     width: 300px;
     height: 205px;
@@ -46,6 +39,7 @@ body{
     align-items: center;
     border-radius: 10px;
     padding: 5px;
+    margin:1em;
     background: rgba(255, 255, 255, 0.1);
    backface-visibility: hidden;
 }
@@ -83,4 +77,7 @@ body{
     margin-top: 18px;
 }
 
+.glink,.llink{
+    color: white;
+}
 `
